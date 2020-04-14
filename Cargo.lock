@@ -576,18 +576,15 @@ checksum = "cd179ae861f0c2e53da70d892f5f3029f9594be0c41dc5269cd371691b1dc2f9"
 
 [[package]]
 name = "humantime"
-version = "1.3.0"
+version = "2.0.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "df004cfca50ef23c36850aaaa59ad52cc70d0e90243c3c7737a4dd32dc7a3c4f"
-dependencies = [
- "quick-error",
-]
+checksum = "b9b6c53306532d3c8e8087b44e6580e10db51a023cf9b433cea2ac38066b92da"
 
 [[package]]
 name = "humantime-serde"
-version = "0.1.1"
+version = "1.0.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "8f59e8a805c18bc9ded3f4e596cb5f0157d88a235e875480a7593b5926f95065"
+checksum = "f1c57351e2c81b7a03e82a6c8f4198b309c158f6d67c4adb707af6af7d91465a"
 dependencies = [
  "humantime",
  "serde",
@@ -722,15 +719,14 @@ checksum = "e2abad23fbc42b3700f2f279844dc832adb2b2eb069b2df918f455c4e18cc646"
 
 [[package]]
 name = "libc"
-version = "0.2.68"
+version = "0.2.69"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "dea0c0405123bba743ee3f91f49b1c7cfb684eef0da0a50110f758ccf24cdff0"
+checksum = "99e85c08494b21a9054e7fe1374a732aeadaff3980b6990b94bfd3a70f690005"
 
 [[package]]
 name = "libzmq"
 version = "0.2.2"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "ec91c16bf4e4dec850dabf272e073fcfce4c7f9de88a96c7389d5226133839c4"
+source = "git+https://github.com/dmweis/libzmq-rs#f65b98f3cd740f8b59918beb90c160aa027eb200"
 dependencies = [
  "bincode",
  "bitflags",
@@ -744,14 +740,13 @@ dependencies = [
  "log",
  "serde",
  "serde_with",
- "uuid",
+ "uuid 0.8.1",
 ]
 
 [[package]]
 name = "libzmq-sys"
 version = "0.1.7+4.3.2"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "92b3e67224f8f74d15f9bc740383bf6884ad2809c383135219cf5802773e3fa1"
+source = "git+https://github.com/dmweis/libzmq-rs#f65b98f3cd740f8b59918beb90c160aa027eb200"
 dependencies = [
  "cmake",
  "libc",
@@ -964,12 +959,6 @@ dependencies = [
  "regex",
  "url 2.1.1",
 ]
-
-[[package]]
-name = "quick-error"
-version = "1.2.3"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "a1d01941d82fa2ab50be1e79e6714289dd7cde78eba4c074bc5a4374f650dfe0"
 
 [[package]]
 name = "quote"
@@ -1199,7 +1188,7 @@ dependencies = [
  "tokio-threadpool",
  "tokio-timer",
  "url 1.7.2",
- "uuid",
+ "uuid 0.7.4",
  "webpki-roots",
  "winreg",
 ]
@@ -1804,6 +1793,15 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "90dbc611eb48397705a6b0f6e917da23ae517e4d127123d2cf7674206627d32a"
 dependencies = [
  "rand 0.6.5",
+]
+
+[[package]]
+name = "uuid"
+version = "0.8.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "9fde2f6a4bea1d6e007c4ad38c6839fa71cbb63b6dbf5b595aa38dc9b1093c11"
+dependencies = [
+ "rand 0.7.3",
 ]
 
 [[package]]
