@@ -27,9 +27,9 @@ impl client::EventHandler for Handler {
 
 fn main() -> Result<(), Box<dyn Error>> {
     if TermLogger::init(LevelFilter::Info, Config::default(), TerminalMode::Mixed).is_err() {
-        error!("Failed to create term logger");
+        eprintln!("Failed to create term logger");
         if SimpleLogger::init(LevelFilter::Info, Config::default()).is_err() {
-            error!("Failed to create simple logger");
+            eprintln!("Failed to create simple logger");
         }
     }
 
