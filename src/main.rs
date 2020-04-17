@@ -39,7 +39,7 @@ fn main() -> Result<(), Box<dyn Error>> {
     let http = client.cache_and_http.http.clone();
 
     // 0mq server
-    let address: libzmq::TcpAddr = "127.0.0.1:32968".try_into().expect("IP address couldn't be parsed");
+    let address: libzmq::TcpAddr = "0.0.0.0:32968".try_into().expect("IP address couldn't be parsed");
     let server = libzmq::ServerBuilder::new()
         .bind(address)
         .build()
