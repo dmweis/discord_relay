@@ -26,13 +26,12 @@ impl client::EventHandler for Handler {
 }
 
 fn main() -> Result<(), Box<dyn Error>> {
-    CombinedLogger::init(vec![TermLogger::new(
-        LevelFilter::Info,
-        Config::default(),
-        TerminalMode::Mixed,
-    )
-    .expect("Failed to initialize logger")])
-    .expect("Failed to initialize logger");
+    if TermLogger::init(LevelFilter::Info, Config::default(), TerminalMode::Mixed).is_err() {
+        error!("Failed to create term logger");
+        if SimpleLogger::init(LevelFilter::Info, Config::default()).is_err() {
+            error!("Failed to create simple logger");
+        }
+    }
 
     let token = env::var("DISCORD_TOKEN").expect("DISCORD_TOKEN has to be set to a valid token");
     let client = client::Client::new(token, Handler).expect("Could not create new client.");
